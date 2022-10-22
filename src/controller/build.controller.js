@@ -11,6 +11,12 @@ class BuildController {
     const result = await service.getClassByBidAndData(bid,data);
     ctx.body = result;
   }
+  
+  async getEmptyInfo(ctx,next) {
+    const { bid,data } = ctx.query;
+    const result = await service.getEmptyByBidAndData(bid,data);
+    ctx.body = result
+  }
 
 }
 module.exports = new BuildController();
