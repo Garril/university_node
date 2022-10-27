@@ -11,6 +11,7 @@ const formatWeaInfo = (weaInfo) => {
   let res = {};
   let week = weaInfo.week;
   let today = week[0];
+  let day = weaInfo.day;
   let hours_arr = today.hours;
 
   hours_arr = hours_arr.map(item => { // 各个小时需要展示的信息
@@ -33,15 +34,19 @@ const formatWeaInfo = (weaInfo) => {
       day_wea_img: item.day_wea_img,
     }
   })
+
   res.today = {
     city: weaInfo.city, // 城市
-    tem: weaInfo.tem, // 气温
+    tem: day.tem, // 气温
+    hum: day.humidity, // 湿度
+    wea: day.wea, // 天气
+    wea_img: day.wea_img, // 天气标志英文拼音
+    win: day.win, // 风向
+
     day_tem: today.day_tem, // 白天气温（一般为最高）
-    night_tem: today.day_tem, // 夜间气温（一般为最低）
-    wea: weaInfo.wea, // 天气
-    wea_img: weaInfo.wea_img, // 天气标志英文拼音
-    hum: weaInfo.humidity, // 湿度
+    night_tem: today.night_tem, // 夜间气温（一般为最低）
     week: today.week, // 周几
+
     hours: hours_arr, // 各小时段不同的天气情况
   }
   res.week = week; // 今天起，最近一周的天气情况
