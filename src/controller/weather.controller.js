@@ -1,11 +1,8 @@
-const {
-  getWeatherInfo
-} = require('../request/weather');
 
 class WeatherController {
 
-  async getWeatherInfoController(ctx,next) {
-    const result = await getWeatherInfo();
+  async getWeatherInfo(ctx,next) {
+    const result = ctx.weaInfo;
     ctx.body = result;
   }
 

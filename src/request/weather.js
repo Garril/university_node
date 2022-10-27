@@ -2,7 +2,7 @@ const {
   request
 } = require('./index');
 
-function getWeatherInfo() {
+function getWeatherInfoByAxios() {
   return request({
     url:'/api',
     params: {
@@ -15,5 +15,5 @@ function getWeatherInfo() {
   })
 }
 module.exports = {
-  getWeatherInfo
+  getWeatherInfoByAxios
 };

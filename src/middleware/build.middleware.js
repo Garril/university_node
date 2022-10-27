@@ -1,6 +1,6 @@
 const service = require('../service/build.service');
 
-const getXXXXX = async(ctx,next)=>{
+const getXXXXX = async(ctx,next) => {
   await next();
 }
 
