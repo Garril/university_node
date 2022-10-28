@@ -1,5 +1,3 @@
-const fs = require('fs');
-
 const service = require('../service/build.service');
 
 class BuildController {

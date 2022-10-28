@@ -62,6 +62,8 @@ const getFormatWeaInfo = async(ctx,next) => {
   const up_path = path.resolve(__dirname, '..'); // 找到当前middleware的上一级文件src的路径
   let origin_data = readFileSync(up_path + "/constants/weather_origin.json"); // 路径拼接
   const weaInfo = JSON.parse(origin_data);
+
+  
   ctx.weaInfo = formatWeaInfo(weaInfo);
   await next();
 }
